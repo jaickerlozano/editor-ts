@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>editor-ts</title>
+  </head>
+  <body>
+    <h1>Editor de Texto (TS + DOM)</h1>
+
+    <textarea id="texto" rows="5" cols="40" placeholder="Ingresa tu texto"></textarea>
+    <div id="botones">
+      <button id="btnDuplicar">Duplicar</button>
+      <button id="btnReemplazar">Reemplazar</button>
+      <button id="btnAgregar">Agregar</button>
+      <button id="btnCortar">Cortar</button>
+      <button id="btnEliminar">Eliminar</button>
+      <button id="btnBuscarSubtexto">Buscar subtexto</button>
+      <button id="btnBuscarPalabra">Buscar palabra</button>
+      <button id="btnMayuscula">Mayúscula</button>
+      <button id="btnMinuscula">Minúscula</button>
+      <button id="btnContarLetras">Contar letras</button>
+      <button id="btnContarPalabras">Contar palabras</button>
+    </div>
+
+    <h2>Salida:</h2>
+    <p id="salida"></p>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
