@@ -71,3 +71,10 @@ btnContarPalabras.addEventListener('click', () => {
   salida.textContent = '';
   salida.textContent = editor.contarPalabras(textoIngresado);
 })
+
+// Activación modo oscuro
+const btnTheme = document.querySelector("#toggleTheme") as HTMLButtonElement;
+
+btnTheme?.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});

@@ -9,8 +9,8 @@ Al elegir la opción debe mostrar el texto modificado y permitir seguir realizan
 export class EditorDeTexto {
     texto: string;
 
-    constructor() {
-        this.texto = '';
+    constructor(texto : string = '') {
+        this.texto = texto;
     }
 
     private validarTexto(entrada : string) : void {
