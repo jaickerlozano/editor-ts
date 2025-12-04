@@ -5,6 +5,7 @@ import {
   btnReemplazar, btnAgregar, btnCortar, btnEliminar, 
   btnBuscarSubtexto, btnBuscarPalabra, btnMayuscula,
   btnMinuscula, btnContarLetras, btnContarPalabras,
+  btnConvertirAlfanumerico
 } from './ui';
 
 let textoIngresado : string = '';
@@ -71,6 +72,12 @@ btnContarPalabras.addEventListener('click', () => {
   salida.textContent = '';
   salida.textContent = editor.contarPalabras(textoIngresado);
 })
+
+btnConvertirAlfanumerico.addEventListener('click', () => {
+  salida.textContent = '';
+  salida.textContent = editor.convertirAlfanumerico(textoIngresado);
+})
+
 
 // Activación modo oscuro
 const btnTheme = document.querySelector("#toggleTheme") as HTMLButtonElement;

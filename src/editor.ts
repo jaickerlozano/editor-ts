@@ -14,22 +14,26 @@ export class EditorDeTexto {
         this.texto = texto;
     }
 
+    // Método privado para validar el texto ingresado
     private validarTexto(entrada : string) : void {
         if(entrada === '') throw new Error('Debe ingresar un texto');
     }
 
+    // Método privado para validar una entrada
     private validarEntrada(entrada : string | number) : void {
         if(entrada === '') throw new Error('Debe ingresar un caracter');
 
         if(typeof entrada !== 'string') throw new Error('Debe ingresar una palabra, número o carácter especial'); 
     }
 
+    // Método privado para validar un número
     private validarNumero(entrada : number) : void {
         if(isNaN(entrada)) throw new Error('Debe ingresar sólo números');
 
         if(entrada < 0) throw new Error('Debe ingresar un número mayor o igual a 0');
     }
 
+    // Método privado para validar si es sólo una palabra
     private esPalabra(entrada : string) : void {
         if(!(/^[A-Za-z]+$/.test(entrada))) throw new Error('Debe ingresar una palabra');
     }
@@ -237,18 +241,25 @@ export class EditorDeTexto {
         }
     }
 
-    convertirAlfanumerico(): string {
-        const mapa: Record<string, string> = {
-            "4": "a",
-            "3": "e",
-            "0": "o",
-            "5": "s",
-            "1": "i",
-        };
+    // Este método aún no está habilitado
+    convertirAlfanumerico(textoIngresado : string): string {
+        try {
+            this.validarTexto(textoIngresado);
 
-        this.texto = this.texto.replace(/[43051]/g, (char) => mapa[char] ?? char);
+            const mapa: Record<string, string> = {
+                "4": "a",
+                "3": "e",
+                "0": "o",
+                "5": "s",
+                "1": "i",
+            };
 
-        return this.texto;
+            this.texto = textoIngresado.replace(/[43051]/g, (char) => mapa[char] ?? char);
+
+            return this.texto;
+        } catch (error) {
+            return getErrorMessage(error);
+        }
     }
 }
 
