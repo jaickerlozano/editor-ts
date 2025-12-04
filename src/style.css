@@ -1,148 +1,171 @@
 /* ===== Variables globales (claro / oscuro) ===== */
 :root {
-  --bg: #f5f5f7;
-  --fg: #1c1c1e;
-  --card-bg: #ffffff;
-  --border: rgba(0,0,0,0.08);
-  --primary: #007aff;
-  --shadow: 0 8px 30px rgba(0,0,0,0.05);
+    --bg: #f5f5f7;
+    --fg: #1c1c1e;
+    --card-bg: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --primary: #007aff;
+    --shadow: 0 8px 30px rgba(0,0,0,0.05);
 }
 
 .dark {
-  --bg: #1c1c1e;
-  --fg: #f5f5f7;
-  --card-bg: #2c2c2e;
-  --border: rgba(255,255,255,0.08);
-  --primary: #0a84ff;
-  --shadow: 0 8px 30px rgba(0,0,0,0.4);
+    --bg: #1c1c1e;
+    --fg: #f5f5f7;
+    --card-bg: #2c2c2e;
+    --border: rgba(255,255,255,0.08);
+    --primary: #0a84ff;
+    --shadow: 0 8px 30px rgba(0,0,0,0.4);
 }
 
 /* ===== Configuración base ===== */
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-  color: var(--fg);
-  transition: background 0.2s ease, color 0.2s ease;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    color: var(--fg);
+    transition: background 0.2s ease, color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
 /* ===== Contenedor principal ===== */
 .app-container {
-  width: 95%;
-  max-width: 800px;
-  margin-top: 40px;
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-  transition: 0.3s ease;
+    width: 95%;
+    max-width: 800px;
+    margin-top: 40px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: 0.3s ease;
 }
 
 /* ===== Título minimalista ===== */
 h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.9rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 /* ===== Editor ===== */
 .editor-panel label {
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
 }
 
 textarea {
-  width: 100%;
-  height: 150px;
-  padding: 14px;
-  font-size: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--card-bg);
-  color: var(--fg);
-  outline: none;
-  resize: vertical;
-  transition: 0.3s ease;
-  box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card-bg);
+    color: var(--fg);
+    outline: none;
+    resize: vertical;
+    transition: 0.3s ease;
+    box-sizing: border-box;
 }
 
 textarea:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0,122,255,0.2);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0,122,255,0.2);
 }
 
 /* ===== Botones minimalistas ===== */
 .buttons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
-  margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 25px;
 }
 
 button {
-  padding: 12px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.2s ease;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
 button:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 button:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 /* ===== Salida ===== */
 #salida {
-  margin-top: 30px;
-  padding: 18px;
-  background: #edf2f7;
-  border-radius: 14px;
+    margin-top: 30px;
+    padding: 18px;
+    background: #edf2f7;
+    border-radius: 14px;
 }
 
 .salida h2 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .resultado  {
-  margin-top: 30px;
-  padding: 20px;
-  background: var(--bg);
-  border-radius: 16px;
-  border: 1px solid var(--border);
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.dark #salida {
+    color: var(--bg);
 }
 
 /* ===== Botón modo oscuro ===== */
 #toggleTheme {
-  width: 140px;
-  margin: 0 auto 20px;
-  display: block;
-  padding: 10px;
-  background: transparent;
-  border: 2px solid var(--border);
-  color: var(--fg);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
+    width: 140px;
+    margin: 0 auto 20px;
+    display: block;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid var(--border);
+    color: var(--fg);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 #toggleTheme:hover {
-  background: var(--border);
+    background: var(--border);
+}
+
+#contenedorEntrada {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card-bg);
+    color: var(--fg);
+    outline: none;
+    resize: vertical;
+    transition: 0.3s ease;
+    field-sizing: content;
 }
