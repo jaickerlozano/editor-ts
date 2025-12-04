@@ -1,5 +1,6 @@
 import './style.css'
 import { createForm, ingresarOtroTexto, perdirIndices } from './ui';
+import { getErrorMessage } from './utilities';
 
 /* - **Editor de texto** Hacer un programa que sea un mini editor de texto. El programa debe inicialmente pedir para ingresar un texto, luego debe preguntar qué es lo que queremos hacer. Opciones:
     * "h4ck3r 5p34k": convierte el texto en "Hacker Speak"
@@ -35,8 +36,15 @@ export class EditorDeTexto {
 
     // * "duplicar": duplicar el texto
     duplicar(textoIngresado : string) {
-        this.texto = textoIngresado.concat(" ", textoIngresado);
-        return this.texto;
+        try {
+            this.validarTexto(textoIngresado);
+
+            this.texto = textoIngresado.concat(" ", textoIngresado);
+
+            return this.texto;
+        } catch (error) {
+            return getErrorMessage(error);
+        }
     }
 
     // * "reemplazar": reemplaza un string por otro en el texto
@@ -58,7 +66,7 @@ export class EditorDeTexto {
 
             return this.texto;
         } catch (error) {
-            return error.message;            
+            return getErrorMessage(error);            
         }
     }
 
@@ -77,7 +85,7 @@ export class EditorDeTexto {
 
             return this.texto;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -106,7 +114,7 @@ export class EditorDeTexto {
 
             return this.texto;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -128,7 +136,7 @@ export class EditorDeTexto {
             return this.texto;
 
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -149,7 +157,7 @@ export class EditorDeTexto {
                 `Sí se encuentra '${subtextoRevisado}' dentro del texto` : 
                 `No se encuentra '${subtextoRevisado}' dentro del texto`;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -169,7 +177,7 @@ export class EditorDeTexto {
                 `Sí se encuentra '${palabraRevisada}' dentro del texto` : 
                 `No se encuentra '${palabraRevisada}' dentro del texto`;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -182,7 +190,7 @@ export class EditorDeTexto {
 
             return this.texto;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -195,7 +203,7 @@ export class EditorDeTexto {
 
             return this.texto;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -210,7 +218,7 @@ export class EditorDeTexto {
 
             return `El texto tiene ${textoSinEspacios.length} letras`;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
@@ -225,7 +233,7 @@ export class EditorDeTexto {
 
             return `El texto tiene ${arrayPalabras.length} palabras en total`;
         } catch (error) {
-            return error.message;
+            return getErrorMessage(error);
         }
     }
 
