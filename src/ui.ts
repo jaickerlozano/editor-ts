@@ -34,6 +34,10 @@ export function crearEntrada(id : string, placeholder : string) : HTMLInputEleme
 
 export function createForm() : Promise<[string, string]> { 
     return new Promise((resolve) => {
+        // Eliminar form si existe
+        const formExistente = document.getElementById('contenedorEntrada');
+        if(formExistente) formExistente.remove();
+
         // Form
         const form = document.createElement('form') as HTMLFormElement;
         form.id = 'contenedorEntrada';
@@ -62,6 +66,10 @@ export function createForm() : Promise<[string, string]> {
 // Esta función sirve para ingresar una cadena de caracteres que puede servir desde una palabra hasta un texto
 export function ingresarOtroTexto() : Promise<string> {
     return new Promise((resolve) => {
+        // Eliminar form si existe
+        const formExistente = document.getElementById('contenedorEntrada');
+        if(formExistente) formExistente.remove();
+
         // Form
         const form = document.createElement('form') as HTMLFormElement;
         form.id = 'contenedorEntrada';
@@ -89,6 +97,10 @@ export function ingresarOtroTexto() : Promise<string> {
 
 export function perdirIndices() : Promise<[number, number]> {
     return new Promise((resolve) => {
+        // Eliminar form si existe
+        const formExistente = document.getElementById('contenedorEntrada');
+        if(formExistente) formExistente.remove();
+
         // Form
         const form = document.createElement('form') as HTMLFormElement;
         form.id = 'contenedorEntrada';
