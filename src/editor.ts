@@ -261,6 +261,53 @@ export class EditorDeTexto {
             return getErrorMessage(error);
         }
     }
+
+    // * "tomar dictado": permite tomar dictado y guardarlo en un archivo de texto
+    async tomarDictado(): Promise<string> {
+        return new Promise((resolve) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+
+            if (!SpeechRecognition) {
+                resolve("Tu navegador no soporta la API de reconocimiento de voz.");
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'es-ES';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.start();
+
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            recognition.onresult = (event: any) => {
+                const transcript = event.results[0][0].transcript;
+
+                // Guardar en archivo
+                const blob = new Blob([transcript], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'dictado.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                resolve(`Dictado guardado exitosamente: "${transcript}"`);
+            };
+
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            recognition.onerror = (event: any) => {
+                resolve(`Error en el reconocimiento de voz: ${event.error}`);
+            };
+
+            recognition.onspeechend = () => {
+                recognition.stop();
+            };
+        });
+    }
 }
 
 // caso de uso

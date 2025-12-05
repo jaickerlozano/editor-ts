@@ -15,6 +15,7 @@ export const btnMinuscula = document.getElementById('btnMinuscula') as HTMLButto
 export const btnContarLetras = document.getElementById('btnContarLetras') as HTMLButtonElement;
 export const btnContarPalabras = document.getElementById('btnContarPalabras') as HTMLButtonElement;
 export const btnConvertirAlfanumerico = document.getElementById('btnConvertirAlfanumerico') as HTMLButtonElement;
+export const btnDictado = document.getElementById('btnDictado') as HTMLButtonElement;
 
 // Variables
 export let nueva : string;
