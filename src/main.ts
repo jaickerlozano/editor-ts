@@ -5,7 +5,7 @@ import {
   btnReemplazar, btnAgregar, btnCortar, btnEliminar, 
   btnBuscarSubtexto, btnBuscarPalabra, btnMayuscula,
   btnMinuscula, btnContarLetras, btnContarPalabras,
-  btnConvertirAlfanumerico
+  btnConvertirAlfanumerico, btnDictado
 } from './ui';
 
 let textoIngresado : string = '';
@@ -77,6 +77,11 @@ btnConvertirAlfanumerico.addEventListener('click', () => {
   salida.textContent = '';
   salida.textContent = editor.convertirAlfanumerico(textoIngresado);
 })
+
+btnDictado.addEventListener('click', async () => {
+  salida.textContent = 'Escuchando...';
+  salida.textContent = await editor.tomarDictado();
+});
 
 
 // Activación modo oscuro
